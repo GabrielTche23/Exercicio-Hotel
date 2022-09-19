@@ -1,42 +1,59 @@
-let hotel = []
-let reserva = []
-let contador = 0
+//Hotel
+let id = [1,2,3,4]
+let nome = ["gabriel","nathan","mahoni","ruan"]
+let categoria = ["a","b","c","d"]
+let endereço = ["endereço1","endereço2","endereço3","endereço4"]
+let telefone = ["telefone1","telefone2","telefone3","telefone4"]
+//Reserva
+let idHotel = [1,2,3,4]
+let nomeResponsavel = ["fulano","ciclano","joao","martins"]
+let diaEntrada = [10,26,13,18]
+let diaSaida = [27,28,16,25]
 
-FazerCadastro();
-CadastrarReserva();
-
-
+//FazerCadastro();
+//CadastrarReserva();
+//ExibirReservas(2);
 
 
 
 function FazerCadastro(){
-    let id = contador
-    let nome = prompt("Digite seu nome: ")
-    let categoria = prompt("Digite a categoria que deseja ficar: ")
-    let endereco = prompt("Digite o endereço: ")
-    let telefone = prompt("Digite o telefone: ")
-    hotel[hotel.length] = id
-    hotel[hotel.length] = nome
-    hotel[hotel.length] = categoria
-    hotel[hotel.length] = endereco
-    hotel[hotel.length] = telefone
-    if(id == contador){
-        contador++
-    }
+    let registrarId = prompt("Digite o ID: ")
+    let registrarNome = prompt("Digite seu nome: ")
+    let registrarCategoria = prompt("Digite a categoria que deseja ficar: ")
+    let registrarEndereco = prompt("Digite o endereço: ")
+    let registrarTelefone = prompt("Digite o telefone: ")
+    id[id.length] = registrarId
+    nome[nome.length] = registrarNome
+    categoria[categoria.length] = registrarCategoria
+    endereço[endereço.length] = registrarEndereco
+    telefone[telefone.length] = registrarTelefone
 }
 function CadastrarReserva(){
-    let id = contador
-    let idHotel = 0
-    let nomeResponsavel = prompt("Digite o nome do responsavel: ")
-    let diaEntrada = prompt("Digite o dia de Entrada: ")
-    let diaSaida = prompt("Digite o dia da Saida: ")
-    reserva[reserva.length] = id
-    reserva[reserva.length] = idHotel
-    reserva[reserva.length] = nomeResponsavel
-    reserva[reserva.length] = diaEntrada
-    reserva[reserva.length] = diaSaida
-    if(id == contador){
-        contador++
-        idHotel++
+    let registrarId = prompt("Digite o ID: ")
+    let registrarIdHotel = prompt("Digite o ID do Hotel: ")
+    let registrarNomeResponsavel = prompt("Digite o nome do responsavel: ")
+    let registrarDiaEntrada = prompt("Digite o dia de Entrada: ")
+    let registrarDiaSaida = prompt("Digite o dia da Saida: ")
+    id[id.length] = registrarId
+    idHotel[idHotel.length] = registrarIdHotel
+    nomeResponsavel[nomeResponsavel.length] = registrarNomeResponsavel
+    diaEntrada[diaEntrada.length] = registrarDiaEntrada
+    diaSaida[diaSaida.length] = registrarDiaSaida
+    if(diaEntrada[index] > diaEntrada[index]){
+        console.log("Impossivel fazer isso.")
     }
+}
+
+function ExibirReservas(idHotelParametro){
+    let reservaAux = []
+    idHotel.forEach((reserva,index) => {
+        if(reserva == idHotelParametro){
+            reservaAux[reservaAux.length] = idHotel[index]
+            reservaAux[reservaAux.length] = nomeResponsavel[index]
+            reservaAux[reservaAux.length] = diaEntrada[index]
+            reservaAux[reservaAux.length] = diaSaida[index]
+        }
+    })
+    console.log("Reserva do Hotel: ", idHotelParametro)
+    reservaAux.forEach(reserva => console.log(reserva))
 }
