@@ -70,3 +70,20 @@ function ExibirHotel(idParametro){
     })
 }
 
+function ExibirReservasdeUmaPessoa(nomeParametro){
+    nome.forEach((nome,index) => {
+        if(nome == nomeParametro){
+            console.log("Reservas : ", nome.length)
+        }
+    })
+}
+
+function ExibirCatergoria(categoriaParametro){
+    let categoriaAux = []
+    categoria.forEach((categoria,index) => {
+        if(categoria == categoriaParametro){
+            categoriaAux[categoria.length] = categoria[index]
+            return categoriaAux
+        }
+    })
+}
