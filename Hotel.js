@@ -6,7 +6,7 @@ let endereço = ["endereço1","endereço2","endereço3","endereço4"]
 let telefone = ["telefone1","telefone2","telefone3","telefone4"]
 //Reserva
 let idHotel = [1,2,3,4]
-let nomeResponsavel = ["gabriel","nathan","mahoni","ruan"]
+let nomeResponsavel = ["gabriel","nathan","gabriel","ruan"]
 let diaEntrada = [10,26,13,18]
 let diaSaida = [27,28,16,25]
 
@@ -14,7 +14,7 @@ let diaSaida = [27,28,16,25]
 //CadastrarReserva();
 //ExibirReservas(2);
 //ExibirHotel(1);
-
+ExibirReservasdeUmaPessoa("gabriel")
 
 function FazerCadastro(){
     let registrarId = prompt("Digite o ID: ")
@@ -71,19 +71,32 @@ function ExibirHotel(idParametro){
 }
 
 function ExibirReservasdeUmaPessoa(nomeParametro){
-    nome.forEach((nome,index) => {
-        if(nome == nomeParametro){
-            console.log("Reservas : ", nome.length)
+    let reservasAux = []
+    nomeResponsavel.forEach((nomes,index) => {
+        if(nomes == nomeParametro){
+            reservasAux[reservasAux.length] = nome[index]
+            reservasAux[reservasAux.length] = nomeResponsavel[index]
+            reservasAux[reservasAux.length] = diaEntrada[index]
+            reservasAux[reservasAux.length] = diaSaida[index]
         }
     })
+    reservasAux.forEach(reservas => console.log(reservas))
 }
 
-function ExibirCatergoria(categoriaParametro){
+function ExibirCategoria(categoriaParametro){
     let categoriaAux = []
     categoria.forEach((categoria,index) => {
         if(categoria == categoriaParametro){
             categoriaAux[categoria.length] = categoria[index]
             return categoriaAux
         }
+    })
+}
+
+function AtualizarTelefone(idHotelParametro,telefoneParametro){
+    idHotel.forEach((id,index) => {
+            if(id == idHotelParametro){
+                telefone[index] = telefoneParametro
+            }
     })
 }
