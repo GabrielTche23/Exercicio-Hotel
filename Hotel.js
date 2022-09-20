@@ -1,19 +1,19 @@
 //Hotel
 let id = [1,2,3,4]
-let nome = ["gabriel","nathan","mahoni","ruan"]
+let nome = ["hotel1","hotel2","hotel3","hotel4"]
 let categoria = ["a","b","c","d"]
 let endereço = ["endereço1","endereço2","endereço3","endereço4"]
 let telefone = ["telefone1","telefone2","telefone3","telefone4"]
 //Reserva
 let idHotel = [1,2,3,4]
-let nomeResponsavel = ["fulano","ciclano","joao","martins"]
+let nomeResponsavel = ["gabriel","nathan","mahoni","ruan"]
 let diaEntrada = [10,26,13,18]
 let diaSaida = [27,28,16,25]
 
 //FazerCadastro();
 //CadastrarReserva();
 //ExibirReservas(2);
-
+//ExibirHotel(1);
 
 
 function FazerCadastro(){
@@ -48,7 +48,7 @@ function ExibirReservas(idHotelParametro){
     let reservaAux = []
     idHotel.forEach((reserva,index) => {
         if(reserva == idHotelParametro){
-            reservaAux[reservaAux.length] = idHotel[index]
+            reservaAux[reservaAux.length] = nome[index]
             reservaAux[reservaAux.length] = nomeResponsavel[index]
             reservaAux[reservaAux.length] = diaEntrada[index]
             reservaAux[reservaAux.length] = diaSaida[index]
@@ -57,3 +57,16 @@ function ExibirReservas(idHotelParametro){
     console.log("Reserva do Hotel: ", idHotelParametro)
     reservaAux.forEach(reserva => console.log(reserva))
 }
+
+function ExibirHotel(idParametro){
+    let hotelAux = []
+    id.forEach((hotel,index) => {
+        if(hotel == idParametro){
+            hotelAux[hotelAux.length] = nome[index]
+            hotelAux[hotelAux.length] = endereço[index]
+            hotelAux[hotelAux.length] = diaEntrada[index]
+            hotelAux[hotelAux.length] = diaSaida[index]
+        }
+    })
+}
+
